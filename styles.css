@@ -1,0 +1,71 @@
+body {
+  background-color: #212121;
+  color: #d0d0d0;
+}
+
+header {
+  height: 15vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.calc-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  background: linear-gradient(to right, #00d503, #fd2634);
+  padding: 4px; /* border width */
+  border-radius: 8px;
+  min-height: 18vh;
+  box-shadow: 10px 10px 20px rgba(0, 213, 3, 0.1);
+}
+
+.calc-card::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: #212121;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.calc-card h3,
+.calc-card p {
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem calc(2vw + 1rem); /* your content padding */
+}
+
+.left {
+  grid-column: 1 / 5;
+}
+
+.right {
+  grid-column: 4 / 8;
+}
+
+h1 {
+  font-size: clamp(1rem, calc(5vw + 1rem), 3rem);
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
