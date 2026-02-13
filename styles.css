@@ -3,20 +3,25 @@ body {
   color: #d0d0d0;
 }
 
+.header-wrapper {
+  border-bottom: 1px solid #00d503;
+}
+
 header {
-  height: 15vh;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1rem 2rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem 0 2rem;
 }
 
 .calc-card {
@@ -29,6 +34,7 @@ header {
   border-radius: 8px;
   min-height: 18vh;
   box-shadow: 10px 10px 20px rgba(0, 213, 3, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .calc-card::before {
@@ -41,6 +47,26 @@ header {
   background: #212121;
   border-radius: 5px;
   z-index: 0;
+}
+
+.comp-int::after {
+  content: "";
+  position: absolute; /* ADD THIS */
+  top: 0; /* ADD THIS */
+  left: 0; /* ADD THIS */
+  right: 0; /* ADD THIS */
+  bottom: 0; /* ADD THIS */
+  background-image: url(assets/chart-1.svg);
+  background-size: contain; /* ADD THIS */
+  background-repeat: no-repeat; /* ADD THIS */
+  background-position: center; /* ADD THIS */
+  opacity: 1;
+  z-index: 0; /* ADD THIS - sits behind text but in front of ::before */
+}
+
+.calc-card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 10px 25px rgba(0, 213, 3, 0.3);
 }
 
 .calc-card h3,
@@ -60,6 +86,37 @@ header {
 
 h1 {
   font-size: clamp(1rem, calc(5vw + 1rem), 3rem);
+  margin: 0;
+}
+
+.tab-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tab {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.3rem 1rem;
+  border: 1px solid #00d503;
+  border-bottom: none;
+  flex-basis: 1;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.tab:hover {
+  color: black;
+  background-color: #00d503;
+  transform: scale(1.15);
+}
+
+.left-tab {
+  border-top-left-radius: 8px;
+}
+
+.right-tab {
+  border-top-right-radius: 8px;
 }
 
 h3 {
