@@ -25,12 +25,13 @@ header {
 }
 
 .calc-card {
-  display: block;
+  display: flex;
+  gap: 1rem;
   text-decoration: none;
   color: inherit;
   position: relative;
   background: linear-gradient(to right, #00d503, #fd2634);
-  padding: 4px; /* border width */
+  padding: 4px;
   border-radius: 8px;
   min-height: 18vh;
   box-shadow: 10px 10px 20px rgba(0, 213, 3, 0.1);
@@ -49,21 +50,6 @@ header {
   z-index: 0;
 }
 
-.comp-int::after {
-  content: "";
-  position: absolute; /* ADD THIS */
-  top: 0; /* ADD THIS */
-  left: 0; /* ADD THIS */
-  right: 0; /* ADD THIS */
-  bottom: 0; /* ADD THIS */
-  background-image: url(assets/chart-1.svg);
-  background-size: contain; /* ADD THIS */
-  background-repeat: no-repeat; /* ADD THIS */
-  background-position: center; /* ADD THIS */
-  opacity: 1;
-  z-index: 0; /* ADD THIS - sits behind text but in front of ::before */
-}
-
 .calc-card:hover {
   transform: scale(1.03);
   box-shadow: 10px 10px 25px rgba(0, 213, 3, 0.3);
@@ -73,7 +59,21 @@ header {
 .calc-card p {
   position: relative;
   z-index: 1;
-  margin: 1.5rem calc(2vw + 1rem); /* your content padding */
+  margin: 1.5rem calc(2vw + 1rem);
+}
+
+.card-image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 1));
+}
+
+.card-image img {
+  width: auto;
+  height: 80%;
+  opacity: 0.4;
 }
 
 .left {
