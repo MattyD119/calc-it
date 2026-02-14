@@ -18,10 +18,10 @@ header {
 .card-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4rem;
+  gap: 5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem 0 2rem;
+  padding: 5rem 2rem 5rem 2rem;
 }
 
 .calc-card {
@@ -34,8 +34,10 @@ header {
   padding: 4px;
   border-radius: 8px;
   min-height: 18vh;
-  box-shadow: 10px 10px 20px rgba(0, 213, 3, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 4px 4px 20px rgba(0, 213, 3, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .calc-card::before {
@@ -58,7 +60,7 @@ header {
 .calc-card h3,
 .calc-card p {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin: 1.5rem calc(2vw + 1rem);
 }
 
@@ -100,7 +102,6 @@ h1 {
   padding: 0.3rem 1rem;
   border: 1px solid #00d503;
   border-bottom: none;
-  flex-basis: 1;
   white-space: nowrap;
   transition: transform 0.2s ease;
 }
@@ -125,4 +126,74 @@ h3 {
 
 p {
   margin-bottom: 0;
+}
+
+@media (max-width: 1075px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .left {
+    grid-column: 1 / 4;
+  }
+
+  .right {
+    grid-column: 2 / 5;
+  }
+}
+
+@media (max-width: 785px) {
+  .card-container {
+    display: block;
+    padding: 0;
+  }
+
+  .calc-card {
+    margin: 3rem 0.5rem;
+  }
+
+  .tab-container {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .calc-card {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .card-image {
+    display: none;
+  }
+
+  .calc-card::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  .comp-int::after {
+    background-image: url("assets/chart-1.svg");
+  }
+
+  .cagr-card::after {
+    background-image: url("assets/cagr.svg");
+  }
+
+  .perc-card::after {
+    background-image: url("assets/percent.svg");
+  }
+
+  .cc-card::after {
+    background-image: url("assets/credit-card.svg");
+  }
 }
