@@ -34,24 +34,25 @@
         <div class="input-section">
           <h3>Compound Interest Calculator</h3>
           <p>Initial Investment</p>
-          <input type="number" />
+          <input type="number" id="initial-investment" />
           <p>Interest Rate</p>
-          <input type="number" />
+          <input type="number" id="interest-rate" />
           <p>Compound Frequency</p>
-          <select>
+          <select id="compound-frequency">
             <option value="text">Monthly</option>
             <option value="text">Annually</option>
           </select>
-          <p>Years</p>
-          <input type="number" />
-          <p>Months</p>
-          <input type="number" />
+          <p>Years Invested</p>
+          <input type="number" id="years-invested" />
           <h3>Regular Contributions</h3>
           <p>Deposit Amount</p>
-          <input type="number" />
+          <input type="number" id="deposit-amount" />
           <p>Frequency</p>
-          <input type="number" />
-          <button>Calculate</button>
+          <select id="deposit-frequency">
+            <option value="text">Monthly</option>
+            <option value="text">Annually</option>
+          </select>
+          <button id="calculate-button">Calculate</button>
         </div>
         <div class="results-section">
           <h3>Interest calculation</h3>
@@ -70,5 +71,6 @@
       </div>
     </main>
     <footer>&copy; Matthew Day. All Rights Reserved. 2026.</footer>
+    <script src="../js/compound-interest.js"></script>
   </body>
 </html>
