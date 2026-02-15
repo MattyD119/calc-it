@@ -1,0 +1,32 @@
+.calculator-box {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: linear-gradient(to right, var(--green), var(--red));
+  padding: 5rem;
+  border-radius: 8px;
+  min-height: 75vh;
+  box-shadow: 4px 4px 20px rgba(0, 213, 3, 0.1);
+}
+
+.calculator-box::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: var(--background-dark);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.current-tab {
+  background-color: var(--green);
+  color: black;
+}
+
+.input-section {
+  position: relative;
+  z-index: 2;
+}

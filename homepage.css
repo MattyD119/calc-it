@@ -1,27 +1,7 @@
-body {
-  background-color: #212121;
-  color: #d0d0d0;
-}
-
-.header-wrapper {
-  border-bottom: 1px solid #00d503;
-}
-
-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem 0 2rem;
-  display: flex;
-  justify-content: space-between;
-}
-
 .card-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5rem 2rem 5rem 2rem;
+  gap: 3rem;
 }
 
 .calc-card {
@@ -30,7 +10,7 @@ header {
   text-decoration: none;
   color: inherit;
   position: relative;
-  background: linear-gradient(to right, #00d503, #fd2634);
+  background: linear-gradient(to right, var(--green), var(--red));
   padding: 4px;
   border-radius: 8px;
   min-height: 18vh;
@@ -47,7 +27,7 @@ header {
   left: 3px;
   right: 3px;
   bottom: 3px;
-  background: #212121;
+  background: var(--background-dark);
   border-radius: 5px;
   z-index: 0;
 }
@@ -64,9 +44,15 @@ header {
   margin: 1.5rem calc(2vw + 1rem);
 }
 
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .card-image {
   width: 40%;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 1));
@@ -75,7 +61,7 @@ header {
 .card-image img {
   width: auto;
   height: 80%;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .left {
@@ -84,40 +70,6 @@ header {
 
 .right {
   grid-column: 4 / 8;
-}
-
-h1 {
-  font-size: clamp(1rem, calc(5vw + 1rem), 3rem);
-  margin: 0;
-}
-
-.tab-container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.tab {
-  text-decoration: none;
-  color: inherit;
-  padding: 0.3rem 1rem;
-  border: 1px solid #00d503;
-  border-bottom: none;
-  white-space: nowrap;
-  transition: transform 0.2s ease;
-}
-
-.tab:hover {
-  color: black;
-  background-color: #00d503;
-  transform: scale(1.15);
-}
-
-.left-tab {
-  border-top-left-radius: 8px;
-}
-
-.right-tab {
-  border-top-right-radius: 8px;
 }
 
 h3 {
