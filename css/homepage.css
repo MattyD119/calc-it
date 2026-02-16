@@ -103,10 +103,6 @@ p {
   .calc-card {
     margin: 3rem 0.5rem;
   }
-
-  .tab-container {
-    display: none;
-  }
 }
 
 @media (max-width: 500px) {

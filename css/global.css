@@ -2,6 +2,7 @@
   --green: #00d503;
   --red: #fd2634;
   --background-dark: #212121;
+  --input-background: #333333;
   --font-white: #d0d0d0;
   --font-heading: "Outfit", sans-serif;
   --font-main: "Inter", sans-serif;
@@ -34,6 +35,11 @@ header {
 h1 {
   font-family: var(--font-heading);
   font-size: clamp(1rem, calc(5vw + 1rem), 3rem);
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
 }
 
 .tab-container {
@@ -69,4 +75,10 @@ h1 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem 4rem 2rem;
+}
+
+@media (max-width: 785px) {
+  .tab-container {
+    display: none;
+  }
 }
