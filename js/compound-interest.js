@@ -11,16 +11,16 @@ calculateButton.addEventListener("click", calculateCompoundInterest);
 const tableBody = document.getElementById("table-body");
 
 function calculateCompoundInterest() {
-  const principle = parseFloat(initialInvestment.value);
+  const principal = parseFloat(initialInvestment.value);
   const rate = parseFloat(interestRate.value);
   const compFreq = parseFloat(compoundFrequency.value);
   const years = parseFloat(yearsInvested.value);
-  const amount = parseFloat(depositAmount.value);
+  const amount = parseFloat(depositAmount.value) || 0;
   const depfreq = parseFloat(depositFrequency.value);
 
   tableBody.innerHTML = "";
 
-  let currentBalance = principle;
+  let currentBalance = principal;
   let runningInterest = 0;
 
   for (let year = 1; year <= years; year++) {
@@ -31,8 +31,10 @@ function calculateCompoundInterest() {
     const accruedCell = document.createElement("td");
     const balanceCell = document.createElement("td");
 
+    currentBalance += amount * depfreq;
+
     const newBalance =
-      currentBalance * Math.pow(1 + rate / 100 / compFreq, compFreq * 1);
+      currentBalance * Math.pow(1 + rate / 100 / compFreq, compFreq);
     let yearsInterest = newBalance - currentBalance;
     currentBalance = newBalance;
     runningInterest += yearsInterest;
