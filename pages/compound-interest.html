@@ -39,8 +39,8 @@
           <input type="number" id="interest-rate" />
           <p>Compound Frequency</p>
           <select id="compound-frequency">
-            <option value="text">Monthly</option>
-            <option value="text">Annually</option>
+            <option value="12">Monthly</option>
+            <option value="1">Annually</option>
           </select>
           <p>Years Invested</p>
           <input type="number" id="years-invested" />
@@ -49,8 +49,8 @@
           <input type="number" id="deposit-amount" />
           <p>Frequency</p>
           <select id="deposit-frequency">
-            <option value="text">Monthly</option>
-            <option value="text">Annually</option>
+            <option value="12">Monthly</option>
+            <option value="1">Annually</option>
           </select>
           <button id="calculate-button">Calculate</button>
         </div>
@@ -65,7 +65,7 @@
                 <th>Balance</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="table-body"></tbody>
           </table>
         </div>
       </div>
