@@ -5,6 +5,7 @@
   background: linear-gradient(to right, var(--green), var(--red));
   border-radius: 8px;
   min-height: 75vh;
+  min-width: fit-content;
   box-shadow: 4px 4px 20px rgba(0, 213, 3, 0.1);
 }
 
@@ -27,13 +28,16 @@
 
 .input-section,
 .results-section {
-  /* max-width: 50%; */
   flex: 1;
   padding: 5rem;
   z-index: 2;
 }
 
-.input-section p {
+.input-section {
+  max-width: 45%;
+}
+
+.input-section label {
   padding: 1rem 1rem 1rem 0;
 }
 
@@ -43,7 +47,8 @@
   align-items: center;
 }
 
-#title-one {
+#title-one,
+#title-three {
   padding-bottom: 1.5rem;
 }
 
@@ -84,6 +89,11 @@
   box-shadow: 4px 4px 10px rgba(0, 213, 3, 0.3);
 }
 
+#calculate-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 8px var(--green);
+}
+
 #calculate-button span {
   position: relative;
   z-index: 10;
@@ -108,4 +118,57 @@
 select,
 textarea {
   caret-color: var(--green);
+}
+
+table {
+  table-layout: auto;
+}
+
+th,
+td {
+  padding: 0.3rem 1rem;
+}
+
+@media (max-width: 1250px) {
+  th,
+  td {
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .calculator-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* min-width: 375px; */
+  }
+
+  .input-section,
+  .results-section {
+    max-width: 100%;
+    padding-left: min(5rem, 10%);
+  }
+}
+
+@media (max-width: 530px) {
+  th,
+  td {
+    padding: 8px 2px;
+    text-align: center;
+  }
+
+  label {
+    white-space: normal;
+    width: 110px;
+  }
+
+  .input-section {
+    max-width: 100%;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 12px;
+  }
 }
