@@ -139,7 +139,7 @@ td {
 @media (max-width: 920px) {
   .calculator-box {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     /* min-width: 375px; */
   }
 
@@ -159,16 +159,37 @@ td {
 
   label {
     white-space: normal;
-    width: 110px;
+    /* width: 110px; */
   }
 
   .input-section {
     max-width: 100%;
   }
 
+  .input {
+    margin-left: 0;
+    width: 100%;
+    height: 40px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   table {
     table-layout: fixed;
     width: 100%;
     font-size: 12px;
+  }
+
+  #calculate-button {
+    width: 100%;
+    height: 50px;
+    margin-top: 60px;
+  }
+
+  th:nth-child(1) {
+    width: 15%;
   }
 }
