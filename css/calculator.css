@@ -138,6 +138,10 @@ td {
   }
 }
 
+#cagr-result {
+  min-height: 25px;
+}
+
 @media (max-width: 920px) {
   .calculator-box {
     display: flex;
