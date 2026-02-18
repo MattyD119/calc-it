@@ -48,7 +48,8 @@
 }
 
 #title-one,
-#title-three {
+#title-three,
+.results-group {
   padding-bottom: 1.5rem;
 }
 
@@ -122,11 +123,12 @@ textarea {
 
 table {
   table-layout: auto;
+  border-collapse: collapse;
 }
 
 th,
 td {
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 1rem 0.3rem 0;
 }
 
 @media (max-width: 1250px) {

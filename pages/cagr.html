@@ -30,7 +30,60 @@
       </header>
     </div>
     <main class="container">
-      <div class="calculator-box"></div>
+      <div class="calculator-box">
+        <div class="input-section">
+          <h3 id="title-one">CAGR Calculator</h3>
+          <div class="input-group">
+            <label for="starting-value">Starting Value</label>
+            <input
+              type="number"
+              id="starting-value"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
+            <label for="ending-value">Ending Value</label>
+            <input
+              type="number"
+              id="ending-value"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
+            <label for="years">Years:</label>
+            <input type="number" id="years" class="input" inputmode="decima" />
+          </div>
+          <div class="input-group">
+            <label for="months">Months</label>
+            <input
+              type="number"
+              id="months"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <button id="calculate-button"><span>Calculate</span></button>
+        </div>
+        <div class="results-section">
+          <h3 id="title-three">CAGR Calculation</h3>
+          <div class="input-group results-group">
+            <p>Annual Growth Rate</p>
+            <span class="input" id="cagr-result">0.00%</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Growth</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
     </main>
     <footer>&copy; Matthew Day. All Rights Reserved. 2026.</footer>
   </body>
