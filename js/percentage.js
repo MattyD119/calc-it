@@ -18,6 +18,11 @@ const minus = document.getElementById("minus");
 
 // result boxes
 const c1Res = document.getElementById("c1-res");
+const c2Res = document.getElementById("c2-res");
+const c3Res = document.getElementById("c3-res");
+const c4Res = document.getElementById("c4-res");
+const c5Res = document.getElementById("c5-res");
+const c6Res = document.getElementById("c6-res");
 
 // button variables
 const c1Btn = document.getElementById("c1-btn");
@@ -42,20 +47,114 @@ function percentageOf() {
   c1Res.textContent = "";
 
   if (isNaN(percentage) || isNaN(figure)) {
-    alert("Fields must have numbers in them");
+    alert("Fields cannot be empty");
   } else {
     let result = (percentage / 100) * figure;
 
-    c1Res.textContent = result.toLocaleString();
+    // c1Res.textContent = formattedResult.toLocaleString();
+    c1Res.textContent = result.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
   }
 }
 
-function percentageCalculator() {}
+function percentageCalculator() {
+  const value = parseFloat(c2Val.value);
+  const total = parseFloat(c2Total.value);
 
-function addSubtract() {}
+  c2Res.textContent = "";
 
-function increaseDecrease() {}
+  if (isNaN(value) || isNaN(total)) {
+    alert("Fields cannot be empty");
+  } else {
+    let result = (value / total) * 100;
 
-function ofWhat() {}
+    c2Res.textContent = result.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+}
 
-function percentageChange() {}
+function addSubtract() {
+  const base = parseFloat(c3Base.value);
+  const percentage = parseFloat(c3Perc.value);
+
+  c3Res.textContent = "";
+
+  if (isNaN(base) || isNaN(percentage)) {
+    alert("Fields cannot be empty");
+  } else {
+    let addResult = base + base * (percentage / 100);
+    let minusResult = base - base * (percentage / 100);
+
+    if (plus.checked) {
+      c3Res.textContent = addResult.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    } else {
+      c3Res.textContent = minusResult.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+    }
+  }
+}
+
+function increaseDecrease() {
+  const fromFigure = parseFloat(c4From.value);
+  const toFigure = parseFloat(c4To.value);
+
+  c4Res.textContent = "";
+
+  if (isNaN(fromFigure) || isNaN(toFigure) || fromFigure === 0) {
+    alert("Fields cannot be empty");
+  } else {
+    let result = ((toFigure - fromFigure) / fromFigure) * 100;
+
+    c4Res.textContent =
+      result.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }) + "%";
+  }
+}
+
+function ofWhat() {
+  const value = parseFloat(c5Val.value);
+  const percentage = parseFloat(c5Perc.value);
+
+  c5Res.textContent = "";
+
+  if (isNaN(value) || isNaN(percentage)) {
+    alert("Fields cannot be empty");
+  } else {
+    let result = value / (percentage / 100);
+
+    c5Res.textContent = result.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+}
+
+function percentageChange() {
+  const initialFigure = parseFloat(c6Init.value);
+  const finalFigure = parseFloat(c6Final.value);
+
+  c6Res.textContent = "";
+
+  if (isNaN(initialFigure) || isNaN(finalFigure) || initialFigure === 0) {
+    alert("Fields cannot be empty");
+  } else {
+    let result = ((finalFigure - initialFigure) / initialFigure) * 100;
+
+    c6Res.textContent =
+      result.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }) + "%";
+  }
+}
