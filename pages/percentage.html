@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calc-It</title>
     <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/percentage.css" />
     <!-- <link rel="stylesheet" href="../css/calculator.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,70 +36,145 @@
           <h3>Percentage Of</h3>
           <div class="input-group">
             <span>What is</span>
-            <input type="number" inputmode="decimal" />
+            <input
+              type="number"
+              class="input"
+              id="c1-perc"
+              inputmode="decimal"
+            />
             <span>of</span>
-            <input type="number" inputmode="decimal" />
+            <input
+              type="number"
+              class="input"
+              id="c1-total"
+              inputmode="decimal"
+            />
           </div>
-          <button id="calc-btn-1">Calculate</button>
-          <span class="result-box"></span>
+          <button id="c1-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c1-res">0</span>
         </section>
 
         <section class="calc-card">
           <h3>Percentage Calculation</h3>
           <div class="input-group">
-            <label for=""></label>
-            <input type="text" />
-            <span></span>
+            <input
+              type="number"
+              class="input"
+              id="c2-val"
+              inputmode="decimal"
+            />
+            <span>is what % of</span>
+            <input
+              type="number"
+              class="input"
+              id="c2-total"
+              inputmode="decimal"
+            />
           </div>
-          <button id="calc-btn-2">Calculate</button>
-          <span class="result-box"></span>
-        </section>
-
-        <section class="calc-card">
-          <h3>Percentage Increase/Decrease</h3>
-          <div class="input-group">
-            <label for=""></label>
-            <input type="text" />
-            <span></span>
-          </div>
-          <button id="calc-btn-3">Calculate</button>
-          <span class="result-box"></span>
+          <button id="c2-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c2-res">0</span>
         </section>
 
         <section class="calc-card">
           <h3>Add/Subtract Percentage</h3>
           <div class="input-group">
-            <label for=""></label>
-            <input type="text" />
-            <span></span>
+            <span>What is</span>
+            <input
+              type="number"
+              class="input"
+              id="c3-base"
+              inputmode="decimal"
+              aria-label="Starting amount"
+            />
+
+            <div class="toggle-container">
+              <input
+                type="radio"
+                id="plus"
+                name="operator"
+                value="add"
+                checked
+              />
+              <label for="plus">+</label>
+              <input type="radio" id="minus" name="operator" value="subtract" />
+              <label for="minus">-</label>
+            </div>
+
+            <input
+              type="number"
+              class="input"
+              id="c3-perc"
+              inputmode="decimal"
+            />
+            <span>%?</span>
           </div>
-          <button id="calc-btn-4">Calculate</button>
-          <span class="result-box"></span>
+          <button id="c3-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c3-res">0</span>
+        </section>
+
+        <section class="calc-card">
+          <h3>Percentage Increase/Decrease</h3>
+          <div class="input-group">
+            <span>from:</span>
+            <input
+              type="number"
+              class="input"
+              id="c4-from"
+              inputmode="decimal"
+            />
+            <span>to:</span>
+            <input type="number" class="input" id="c4-to" inputmode="decimal" />
+          </div>
+          <button id="c4-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c4-res">0</span>
         </section>
 
         <section class="calc-card">
           <h3>Percentage of What?</h3>
           <div class="input-group">
-            <label for=""></label>
-            <input type="text" />
-            <span></span>
+            <input
+              type="number"
+              class="input"
+              id="c5-val"
+              inputmode="decimal"
+            />
+            <span>is</span>
+            <input
+              type="number"
+              class="input"
+              id="c5-perc"
+              inputmode="decimal"
+            />
+            <span>of what?</span>
           </div>
-          <button id="calc-btn-5">Calculate</button>
-          <span class="result-box"></span>
+          <button id="c5-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c5-res">0</span>
         </section>
 
         <section class="calc-card">
           <h3>Percentage Change</h3>
           <div class="input-group">
-            <label for=""></label>
-            <input type="text" />
-            <span></span>
+            <span>Initial Value:</span>
+            <input
+              type="number"
+              class="input"
+              id="c6-init"
+              inputmode="decimal"
+            />
+            <span>Final Value</span>
+            <input
+              type="number"
+              class="input"
+              id="c6-final"
+              inputmode="decimal"
+            />
           </div>
-          <button id="calc-btn-6">Calculate</button>
-          <span class="result-box"></span>
+          <button id="c6-btn"><span>Calculate</span></button>
+          <span class="result-box" id="c6-res">0</span>
         </section>
       </div>
     </main>
     <footer>&copy; Matthew Day. All Rights Reserved. 2026.</footer>
+    <script src="../js/percentage.js"></script>
   </body>
 </html>
