@@ -23,6 +23,11 @@
   z-index: 0;
 }
 
+.current-tab {
+  background-color: var(--green);
+  color: black;
+}
+
 .calc-card {
   position: relative;
   z-index: 2;
