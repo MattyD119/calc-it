@@ -58,7 +58,7 @@
   padding: 1.5rem 0 1.5rem 0;
 }
 
-#calculate-button {
+.calculate-button {
   display: block;
   margin: auto;
   color: inherit;
@@ -73,7 +73,7 @@
     box-shadow 0.2s ease;
 }
 
-#calculate-button::before {
+.calculate-button::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -85,17 +85,17 @@
   z-index: 0;
 }
 
-#calculate-button:hover {
+.calculate-button:hover {
   transform: scale(1.03);
   box-shadow: 4px 4px 10px rgba(0, 213, 3, 0.3);
 }
 
-#calculate-button:focus {
+.calculate-button:focus {
   outline: none;
   box-shadow: 0px 0px 8px var(--green);
 }
 
-#calculate-button span {
+.calculate-button span {
   position: relative;
   z-index: 10;
 }
@@ -189,7 +189,7 @@ td {
     font-size: 12px;
   }
 
-  #calculate-button {
+  .calculate-button {
     width: 100%;
     height: 50px;
     margin-top: 60px;

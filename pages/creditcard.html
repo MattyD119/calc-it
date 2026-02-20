@@ -32,7 +32,40 @@
       </header>
     </div>
     <main class="container">
-      <div class="calculator-box"></div>
+      <div class="calculator-box">
+        <section class="input-section">
+          <h3>Pay off Calculator</h3>
+          <div class="">
+            <label for="pay-off-balance">Credit card balance:</label>
+            <input type="number" name="pay_off_balance" id="pay-off-balance" />
+            <label for="pay-off-int-rate">Interest rate (APR):</label>
+            <input
+              type="number"
+              name="pay_off_int_rate"
+              id="pay-off-int-rate"
+            />
+            <label for="monthly-payment">Payment amount per month:</label>
+            <input type="number" name="monthly_payment" id="monthly-payment" />
+          </div>
+          <button class="calculate-button"><span>Calculate</span></button>
+        </section>
+        <section class="input-section">
+          <h3>Monthly repayments</h3>
+          <div class="">
+            <label for="monthly-balance">Credit card balance:</label>
+            <input type="number" name="monthly_balance" id="monthly-balance" />
+            <label for="monthly-int-rate">Interest rate (APR):</label>
+            <input
+              type="number"
+              name="monthly_int_rate"
+              id="monthly-int-rate"
+            />
+            <label for="desired-months">Desired months to be debt free:</label>
+            <input type="number" name="desired_months" id="desired-months" />
+          </div>
+          <button class="calculate-button"><span>Calculate</span></button>
+        </section>
+      </div>
     </main>
     <footer>&copy; Matthew Day. All Rights Reserved. 2026.</footer>
   </body>
