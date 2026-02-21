@@ -34,36 +34,111 @@
     <main class="container">
       <div class="calculator-box">
         <section class="input-section">
-          <h3>Pay off Calculator</h3>
-          <div class="">
+          <h3 id="title-one">Pay off Calculator</h3>
+          <div class="input-group">
             <label for="pay-off-balance">Credit card balance:</label>
-            <input type="number" name="pay_off_balance" id="pay-off-balance" />
+            <input
+              type="number"
+              name="pay_off_balance"
+              id="pay-off-balance"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
             <label for="pay-off-int-rate">Interest rate (APR):</label>
             <input
               type="number"
               name="pay_off_int_rate"
               id="pay-off-int-rate"
+              class="input"
+              inputmode="decimal"
             />
-            <label for="monthly-payment">Payment amount per month:</label>
-            <input type="number" name="monthly_payment" id="monthly-payment" />
           </div>
-          <button class="calculate-button"><span>Calculate</span></button>
+          <div class="input-group">
+            <label for="monthly-payment">Payment amount per month:</label>
+            <input
+              type="number"
+              name="monthly_payment"
+              id="monthly-payment"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <button id="pay-off-btn" class="calculate-button">
+            <span>Calculate</span>
+          </button>
+          <h3 id="title-two">Credit card calculation results...</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td>Months to pay off debt:</td>
+                <td id="cc-res-months">0</td>
+              </tr>
+              <tr>
+                <td>Total interest you will pay:</td>
+                <td id="cc-res-interest">0</td>
+              </tr>
+              <tr>
+                <td>Total to pay back:</td>
+                <td id="cc-res-total">0</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
+
         <section class="input-section">
-          <h3>Monthly repayments</h3>
-          <div class="">
+          <h3 id="title-three">Monthly repayments</h3>
+          <div class="input-group">
             <label for="monthly-balance">Credit card balance:</label>
-            <input type="number" name="monthly_balance" id="monthly-balance" />
+            <input
+              type="number"
+              name="monthly_balance"
+              id="monthly-balance"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="input-group">
             <label for="monthly-int-rate">Interest rate (APR):</label>
             <input
               type="number"
               name="monthly_int_rate"
               id="monthly-int-rate"
+              class="input"
+              inputmode="decimal"
             />
-            <label for="desired-months">Desired months to be debt free:</label>
-            <input type="number" name="desired_months" id="desired-months" />
           </div>
-          <button class="calculate-button"><span>Calculate</span></button>
+          <div class="input-group">
+            <label for="desired-months">Desired months to be debt free:</label>
+            <input
+              type="number"
+              name="desired_months"
+              id="desired-months"
+              class="input"
+              inputmode="decimal"
+            />
+          </div>
+          <button id="repayment-btn" class="calculate-button">
+            <span>Calculate</span>
+          </button>
+          <h3 id="title-four">Credit card calculation results...</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td>Monthly payment required:</td>
+                <td id="cc2-res-monthly">0</td>
+              </tr>
+              <tr>
+                <td>Total interest you will pay:</td>
+                <td id="cc2-res-interest">0</td>
+              </tr>
+              <tr>
+                <td>Total to pay back:</td>
+                <td id="cc2-res-total">0</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </div>
     </main>
