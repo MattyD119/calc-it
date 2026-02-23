@@ -108,7 +108,7 @@ p {
 @media (max-width: 500px) {
   .calc-card {
     display: block;
-    margin: 1rem 0;
+    margin: 1rem 20px;
   }
 
   .card-image {
