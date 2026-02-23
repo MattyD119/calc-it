@@ -20,6 +20,9 @@ const ccResMonths = document.getElementById("cc-res-months");
 const ccResInterest = document.getElementById("cc-res-interest");
 const ccResTotal = document.getElementById("cc-res-total");
 const monthlyTable = document.getElementById("monthly-table");
+const cc2ResMonthly = document.getElementById("cc2-res-monthly");
+const cc2ResInterest = document.getElementById("cc2-res-interest");
+const cc2ResTotal = document.getElementById("cc2-res-total");
 
 function calculatePayOff() {
   const balance = parseFloat(payOffBalance.value);
@@ -63,4 +66,34 @@ function calculatePayOff() {
   }
 }
 
-function calculateRepayment() {}
+function calculateRepayment() {
+  const principal = parseFloat(monthlyBalance.value);
+  const theIntRate = parseFloat(monthlyIntRate.value);
+  const timePeriod = parseFloat(desiredMonths.value);
+
+  const dividedIntRate = theIntRate / 100 / 12;
+
+  const monthlyPayment =
+    principal *
+    ((dividedIntRate * Math.pow(1 + dividedIntRate, timePeriod)) /
+      (Math.pow(1 + dividedIntRate, timePeriod) - 1));
+
+  cc2ResMonthly.textContent = monthlyPayment.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+
+  const interestPaid = monthlyPayment * timePeriod - principal;
+
+  cc2ResInterest.textContent = interestPaid.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+
+  const payBackTotal = principal + interestPaid;
+
+  cc2ResTotal.textContent = payBackTotal.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+}
