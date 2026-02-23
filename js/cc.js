@@ -51,18 +51,14 @@ function calculatePayOff() {
     let totalPaid = balance + totalInterest;
 
     ccResMonths.textContent = counter;
-    ccResInterest.textContent =
-      "£" +
-      totalInterest.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      });
-    ccResTotal.textContent =
-      "£" +
-      totalPaid.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      });
+    ccResInterest.textContent = totalInterest.toLocaleString("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    });
+    ccResTotal.textContent = totalPaid.toLocaleString("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    });
   }
 }
 
